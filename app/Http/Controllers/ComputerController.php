@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ComputerRequest;
 use App\Http\Resources\ComputerResource;
 use App\Models\Computer;
+use App\Models\User;
+use App\Models\Admin;
 use Illuminate\Http\Request;
 
 class ComputerController extends Controller

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
@@ -11,10 +13,17 @@ class AdminController extends Controller
         return view('admin.login');
     }
 
-    public function login()
+    public function login(Request $request)
     {
-        return view('admin.login');
+        $credentials = $request->all();
+
+        if (Auth::guard('admin')->attempt(['email' => $credentials['email'], 'password' => $credentials['password']])) {
+            return redirect()->route('admin.dashboard');
+        }
+
+        return back()->withErrors(['email' => 'Invalid credentials']);
     }
+
     public function dashboard()
     {
         return view('admin.dashboard');

@@ -19,7 +19,7 @@ use App\Http\Controllers\AdminController;
 /*    ------------ADMIN --------------*/
 Route::prefix('admin')->group(function(){
     Route::get('/login', [AdminController::class, 'index'])->name('admin.login');
-    Route::get('/login/owner', [AdminController::class, 'login'])->name('admin.welcome');
+    Route::post('/login/owner', [AdminController::class, 'login'])->name('admin.login.owner');
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard')->middleware('admin');
 
 

@@ -28,8 +28,7 @@ class ComputerController extends Controller
             'PC_IP' => 'required',
             'Price' => 'required|numeric'
         ]);
-        $Newpc = Computer::create($computer);
-
+        Computer::create($computer);
         return redirect()->route('computers.index');
     }
     public function edit(Computer $computer)

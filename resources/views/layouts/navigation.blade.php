@@ -26,7 +26,7 @@
                             <div>@if(auth()->guard('admin')->check())
                                     <div>Welcome, Admin: {{ auth()->guard('admin')->user()->name }}</div>
                                 @elseif(auth()->check())
-                                    <div>Welcome, User: {{ auth()->user()->name }}</div>
+                                    <div>Welcome, {{ auth()->user()->name }}</div>
                                 @else
                                     <div>Welcome, Guest</div>
                                 @endif

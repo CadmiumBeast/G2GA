@@ -12,6 +12,7 @@ return new class extends Migration {
             $table->string('Pc_Name');
             $table->string('PC_IP');
             $table->integer('Price');
+            $table->string('path');
             $table->timestamps();
         });
     }

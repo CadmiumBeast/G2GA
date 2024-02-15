@@ -5,14 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Computer extends Model
+class Booking extends Model
 {
     use HasFactory;
-
-    protected $fillable = [
-        'Pc_Name',
-        'PC_IP',
-        'Price',
-        'path'
-    ];
 }

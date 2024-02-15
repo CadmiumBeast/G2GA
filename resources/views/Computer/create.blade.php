@@ -5,20 +5,23 @@
         </h2>
     </x-slot>
     <div>
-        <form method="post" action="{{route('computers.store')}}" class="mx-10 my-5">
+        <form method="post" action="{{ route('admin.computers.store') }}" class="mx-10 my-5" enctype="multipart/form-data">
             @csrf
-
             <div>
-                <label for="name">Name</label>
-                <input id="Pc_Name" class="block mt-1 w-full" type="text" name="Pc_Name" :value="old('name')" required autofocus />
+                <label for="Pc_Name">Name</label>
+                <input id="Pc_Name" class="block mt-1 w-full" type="text" name="Pc_Name" :value="old('Pc_Name')" required autofocus />
             </div>
             <div class="mt-4">
-                <label for="ip">IP Address</label>
-                <input id="Pc_IP" class="block mt-1 w-full" type="text" name="PC_IP" :value="old('ip')" required />
+                <label for="PC_IP">IP Address</label>
+                <input id="PC_IP" class="block mt-1 w-full" type="text" name="PC_IP" :value="old('PC_IP')" required />
             </div>
             <div>
-                <label for="price">Price </label>
-                <input id="Price" class="block mt-1 w-full" type="text" name="Price" :value="old('price')" required />
+                <label for="Price">Price</label>
+                <input id="Price" class="block mt-1 w-full" type="text" name="Price" :value="old('Price')" required />
+            </div>
+            <div>
+                <label for="path">Image</label>
+                <input id="path" class="block mt-1 w-full" type="file" name="path" :value="old('path')"/>
             </div>
             <div class="flex items-center justify-end mt-4">
                 <input type="submit" value="Add Computer">

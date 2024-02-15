@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
     <div>
-        <form method="post" action="{{route('computers.update', ['computer'=>$computer])}}" class="mx-10 my-5">
+        <form method="post" action="{{route('admin.computers.update', ['computer'=>$computer])}}" class="mx-10 my-5">
             @csrf
             @method('PUT')
 
